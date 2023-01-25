@@ -11,6 +11,7 @@ const WeatherForecast = ({ locationKey }) => {
   const [rainType, setRainType] = useState("");
   const [rainIntensity, setRainIntensity] = useState("");
   const [temperature, setTemperature] = useState(Number);
+  const [currentImg, setCurrentImg] = useState('')
 
   const [currentWeatherDescription, setCurrentWeatherDescription] =
     useState("");
@@ -21,6 +22,7 @@ const WeatherForecast = ({ locationKey }) => {
   const [dayOneDayDescription, setDayOneDayDescription] = useState("");
   const [dayOneNightDescription, setDayOneNightDescription] = useState();
   const [dayOneDate, setDayOneDate] = useState(Date);
+  const [dayOneImg, setDayOneImg] = useState('')
 
   // Day 2
   const [dayTwoMinTemp, setDayTwoMinTemp] = useState(Number);
@@ -28,6 +30,7 @@ const WeatherForecast = ({ locationKey }) => {
   const [dayTwoDayDescription, setDayTwoDayDescription] = useState("");
   const [dayTwoNightDescription, setDayTwoNightDescription] = useState();
   const [dayTwoDate, setDayTwoDate] = useState(Date);
+  const [dayTwoImg, setDayTwoImg] = useState('')
 
   // Day 3
   const [dayThreeMinTemp, setDayThreeMinTemp] = useState(Number);
@@ -35,6 +38,7 @@ const WeatherForecast = ({ locationKey }) => {
   const [dayThreeDayDescription, setDayThreeDayDescription] = useState("");
   const [dayThreeNightDescription, setDayThreeNightDescription] = useState();
   const [dayThreeDate, setDayThreeDate] = useState(Date);
+  const [dayThreeImg, setDayThreeImg] = useState('')
 
   // Day 4
   const [dayFourMinTemp, setDayFourMinTemp] = useState(Number);
@@ -42,6 +46,7 @@ const WeatherForecast = ({ locationKey }) => {
   const [dayFourDayDescription, setDayFourDayDescription] = useState("");
   const [dayFourNightDescription, setDayFourNightDescription] = useState();
   const [dayFourDate, setDayFourDate] = useState(Date);
+  const [dayFourImg, setDayFourImg] = useState('')
 
   // Day 5
   const [dayFiveMinTemp, setDayFiveMinTemp] = useState(Number);
@@ -49,6 +54,7 @@ const WeatherForecast = ({ locationKey }) => {
   const [dayFiveDayDescription, setDayFiveDayDescription] = useState("");
   const [dayFiveNightDescription, setDayFiveNightDescription] = useState();
   const [dayFiveDate, setDayFiveDate] = useState(Date);
+  const [dayFiveImg, setDayFiveImg] = useState('')
 
   const searchBtn = document.getElementById("button-addon1");
   if (searchBtn) {
@@ -58,6 +64,7 @@ const WeatherForecast = ({ locationKey }) => {
   }
 
   const fetchFiveDayForecast = async () => {
+
     const getFiveDayForecastData = await fetch(
       `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}`
     );
@@ -74,7 +81,14 @@ const WeatherForecast = ({ locationKey }) => {
     const date1Unformatted = fiveDayForecastJSON.DailyForecasts[0].Date;
     const date1PartialFormat = new Date(date1Unformatted);
     let date1 = date1PartialFormat.getDay();
+    const weatherIconNumberDay1 = fiveDayForecastJSON.DailyForecasts[0].Day.Icon
+    const weatherIconNumberNight1 = fiveDayForecastJSON.DailyForecasts[0].Night.Icon
+
 console.log(fiveDayForecastJSON)
+
+
+
+
     if(date1 === 0){
       date1 = 'Sunday'
     }
@@ -113,6 +127,10 @@ console.log(fiveDayForecastJSON)
     const date2Unformatted = fiveDayForecastJSON.DailyForecasts[1].Date;
     const date2PartialFormat = new Date(date2Unformatted);
     let date2 = date2PartialFormat.getDay();
+    const weatherIconNumberDay2 = fiveDayForecastJSON.DailyForecasts[1].Day.Icon
+    const weatherIconNumberNight2 = fiveDayForecastJSON.DailyForecasts[1].Night.Icon
+
+
 
     if(date2 === 0){
       date2 = 'Sunday'
@@ -153,6 +171,9 @@ console.log(fiveDayForecastJSON)
     const date3Unformatted = fiveDayForecastJSON.DailyForecasts[2].Date;
     const date3PartialFormat = new Date(date3Unformatted);
     let date3 = date3PartialFormat.getDay();
+    const weatherIconNumberDay3 = fiveDayForecastJSON.DailyForecasts[2].Day.Icon
+    const weatherIconNumberNight3 = fiveDayForecastJSON.DailyForecasts[2].Night.Icon
+
 
     if(date3 === 0){
       date3 = 'Sunday'
@@ -193,6 +214,9 @@ console.log(fiveDayForecastJSON)
     const date4Unformatted = fiveDayForecastJSON.DailyForecasts[3].Date;
     const date4PartialFormat = new Date(date4Unformatted);
     let date4 = date4PartialFormat.getDay();
+    const weatherIconNumberDay4 = fiveDayForecastJSON.DailyForecasts[3].Day.Icon
+    const weatherIconNumberNight4 = fiveDayForecastJSON.DailyForecasts[3].Night.Icon
+
 
     if(date4 === 0){
       date4 = 'Sunday'
@@ -233,6 +257,9 @@ console.log(fiveDayForecastJSON)
     const date5Unformated = fiveDayForecastJSON.DailyForecasts[4].Date;
     const date5PartialFormat = new Date(date5Unformated);
     let date5 = date5PartialFormat.getDay();
+    const weatherIconNumberDay5 = fiveDayForecastJSON.DailyForecasts[4].Day.Icon
+    const weatherIconNumberNight5 = fiveDayForecastJSON.DailyForecasts[4].Night.Icon
+
 
     if(date5 === 0){
       date5 = 'Sunday'
@@ -271,23 +298,163 @@ console.log(fiveDayForecastJSON)
       `http://dataservice.accuweather.com/forecasts/v1/hourly/1hour/${locationKey}?apikey=${apiKey}`
     );
     const currentWeatherJSON = await getCurrentWeatherData.json();
+
+    console.log(`Current weather json: ${currentWeatherJSON}`)
+
+
     const rainLikelihood = currentWeatherJSON[0].PrecipitationProbability;
     const isRaining = currentWeatherJSON[0].HasPrecipitation;
     const typeOfRain = currentWeatherJSON[0].PrecipitationType;
     const intensity = currentWeatherJSON[0].PrecipitationIntensity;
     const temp = currentWeatherJSON[0].Temperature.Value;
-      console.log(currentWeatherJSON)
+    let weatherIconNumber = currentWeatherJSON[0].WeatherIcon
+
+    // set the img
+    if(weatherIconNumber === 1){
+      weatherIconNumber = '../1_Sunny.svg'
+    } else if(weatherIconNumber === 2){
+      weatherIconNumber = '../2_Mostly_Sunny.svg'
+    }
+     else if(weatherIconNumber === 3){
+      weatherIconNumber = '../3_Partly_Sunny.svg'
+    }
+     else if(weatherIconNumber === 4){
+      weatherIconNumber = '../4_Intermittent_Clouds.svg'
+    }
+     else if(weatherIconNumber === 5){
+      weatherIconNumber = '../5_Hazy_Sunshine.svg'
+    }
+     else if(weatherIconNumber === 6){
+      weatherIconNumber = '../6_Mostly_Cloudy.svg'
+    }
+     else if(weatherIconNumber === 7){
+      weatherIconNumber = '../7_Cloudy.svg'
+    }
+     else if(weatherIconNumber === 8){
+      weatherIconNumber = '../8_Dreary_Overcast.svg'
+    }
+     else if(weatherIconNumber === 11){
+      weatherIconNumber = '../11_Fog.svg'
+    }
+     else if(weatherIconNumber === 12){
+      weatherIconNumber = '../12_Showers.svg'
+    }
+     else if(weatherIconNumber === 13){
+      weatherIconNumber = '../13_Mostly_Cloudy_with_Showers.svg'
+    }
+     else if(weatherIconNumber === 14){
+      weatherIconNumber = '../14_Partly_Sunny_with_Showers.svg'
+    }
+     else if(weatherIconNumber === 15){
+      weatherIconNumber = '../15_T-Storms.svg'
+    }
+     else if(weatherIconNumber === 16){
+      weatherIconNumber = '../16_Mostly_Cloudy_with_T_Storms.svg'
+    }
+     else if(weatherIconNumber === 17){
+      weatherIconNumber = '../17_Partly_Sunny_with_Flurries.svg'
+    }
+     else if(weatherIconNumber === 18){
+      weatherIconNumber = '../18_Rain.svg'
+    }
+     else if(weatherIconNumber === 19){
+      weatherIconNumber = '../19_Flurries.svg'
+    }
+     else if(weatherIconNumber === 20){
+      weatherIconNumber = '../20_Mostly_Cloudy_with_Flurries.svg'
+    }
+     else if(weatherIconNumber === 21){
+      weatherIconNumber = '../21_Partyl_Sunny_with_Flurries.svg'
+    }
+     else if(weatherIconNumber === 22){
+      weatherIconNumber = '../22_Snow.svg'
+    }
+     else if(weatherIconNumber === 23){
+      weatherIconNumber = '../23_Mostly_Cloudy_with_Snow.svg'
+    }
+     else if(weatherIconNumber === 24){
+      weatherIconNumber = '../24_Ice.svg'
+    }
+     else if(weatherIconNumber === 25){
+      weatherIconNumber = '../25_Sleet.svg'
+    }
+     else if(weatherIconNumber === 26){
+      weatherIconNumber = '../26_Freezing_Rain.svg'
+    }
+     else if(weatherIconNumber === 29){
+      weatherIconNumber = '../29_Rain_and_Snow.svg'
+    }
+     else if(weatherIconNumber === 30){
+      weatherIconNumber = '../30_Hot.svg'
+    }
+     else if(weatherIconNumber === 31){
+      weatherIconNumber = '../31_Cold.svg'
+    }
+     else if(weatherIconNumber === 32){
+      weatherIconNumber = '../32_Windy.svg'
+    }
+     else if(weatherIconNumber === 33){
+      weatherIconNumber = '../33_Clear.svg'
+    }
+     else if(weatherIconNumber === 34){
+      weatherIconNumber = '../34_Mostly_Clear.svg'
+    }
+     else if(weatherIconNumber === 35){
+      weatherIconNumber = '../35_Partly_Cloudy.svg'
+    }
+     else if(weatherIconNumber === 36){
+      weatherIconNumber = '../36_Intermittent_Clouds.svg'
+    }
+     else if(weatherIconNumber === 37){
+      weatherIconNumber = '../37_Hazy_Moonlight.svg'
+    }
+     else if(weatherIconNumber === 38){
+      weatherIconNumber = '../38_Mostly_Cloudy.svg'
+    }
+     else if(weatherIconNumber === 39){
+      weatherIconNumber = '../39_Partly_Cloudy_with_Showers.svg'
+    }
+     else if(weatherIconNumber === 40){
+      weatherIconNumber = '../40_Mostly_Cloudy_with_Showers.svg'
+    }
+     else if(weatherIconNumber === 41){
+      weatherIconNumber = '../41_Partly_Cloudy_with_T_Storms.svg'
+    }
+     else if(weatherIconNumber === 42){
+      weatherIconNumber = '../42_Mostly_Cloudy_with_T_Storms.svg'
+    }
+     else if(weatherIconNumber === 43){
+      weatherIconNumber = '../43_Mostly_Cloudy_with_Flurries.svg'
+    }
+     else if(weatherIconNumber === 44){
+      weatherIconNumber = '../43_Mostly_Cloudy_with_Snow.svg'
+     }else{
+      weatherIconNumber ='../1_Sunny.svg'
+    }
+
+
+    console.log(currentWeatherJSON)
     setChanceOfRain(rainLikelihood);
     setIsCurrentlyRaining(isRaining);
     setRainType(typeOfRain);
     setRainIntensity(intensity);
     setTemperature(temp);
+    setCurrentImg(weatherIconNumber)
+
+
+
+
+
+
 
 
     const getForecastDescriptionData = await fetch(
       `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}`
     );
     const forecastDescriptionJSON = await getForecastDescriptionData.json();
+    console.log(`Forecast Description JSON: ${forecastDescriptionJSON}`)
+
+
     const weatherNow = forecastDescriptionJSON.Headline.Text;
 
 
@@ -336,7 +503,7 @@ console.log(fiveDayForecastJSON)
       <>
       <CardGroup>
         <Card>
-          <Card.Img variant="top" src="../hourly-svg.svg" />
+          <Card.Img variant="top" src={currentImg} />
           <Card.Body>
             <Card.Title>Current Weather</Card.Title>
             <Card.Text>{currentWeatherDescription}</Card.Text>
