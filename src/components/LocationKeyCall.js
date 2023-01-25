@@ -5,8 +5,8 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import apiKey from '../.secrets/keys';
 import CardGroup from 'react-bootstrap/CardGroup';
-import HourlyWeather from './HourlyWeather';
-import FiveDayForecast from './FiveDayForecast';
+import WeatherForecast from './WeatherForecast';
+// import FiveDayForecast from './FiveDayForecast';
 
 
 const LocationKeyCall = () => {
@@ -16,6 +16,7 @@ const LocationKeyCall = () => {
     const [zip, setZip] = useState('');
     const [locationKey, setLocationKey] = useState('');
     const [disabled, setDisabled] = useState(true)
+    
     // Hourly forecast
     // const [chanceOfRain, setChanceOfRain] = useState(Number);
     // const [isCurrentlyRaining, setIsCurrentlyRaining] = useState(Boolean);
@@ -109,7 +110,7 @@ const LocationKeyCall = () => {
     <>
 
             <InputGroup className="mx-auto" id='search-bar' type='text' value={zip} onChange={e => setZip(e.target.value)} onKeyUp={searchKeyPress}>
-                <Button type='submit' variant="primary" id="button-addon1"  onClick={handleClick}>
+                <Button type='submit' variant="primary" id="button-addon1" onClick={handleClick}>
                 Search
                 </Button>
                 <Form.Control
@@ -136,8 +137,8 @@ const LocationKeyCall = () => {
                     <Button variant='primary' type='submit' onClick={fetchFiveDayForecast}><Card.Title>Five Day Forecast</Card.Title></Button>
                 </Card.Body>
             </Card> */}
-            <HourlyWeather locationKey={locationKey} />
-            <FiveDayForecast locationKey={locationKey} />
+            <WeatherForecast locationKey={locationKey} />
+            {/* <FiveDayForecast locationKey={locationKey} /> */}
             </CardGroup>
 
 
