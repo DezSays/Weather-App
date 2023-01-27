@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import apiKey from "../keys/keys";
 import CardGroup from "react-bootstrap/CardGroup";
 import WeatherForecast from "./WeatherForecast";
 
 const LocationKeyCall = () => {
+  const apiKey = process.env.REACT_APP_APIKEY
   const [zip, setZip] = useState("");
   const [locationKey, setLocationKey] = useState("");
   const [disabled, setDisabled] = useState(true);

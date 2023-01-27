@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import apiKey from "../keys/keys";
+
 import CardGroup from "react-bootstrap/CardGroup";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 const WeatherForecast = ({ locationKey }) => {
+  const apiKey = process.env.REACT_APP_APIKEY
   const [displayState, setDisplayState] = useState(0);
   const [chanceOfRain, setChanceOfRain] = useState(Number);
   // eslint-disable-next-line
