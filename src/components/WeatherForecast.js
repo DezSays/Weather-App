@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import apiKey from "../.secrets/keys";
+import apiKey from "../keys/keys";
 import CardGroup from "react-bootstrap/CardGroup";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";

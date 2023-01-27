@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
-import apiKey from "../.secrets/keys";
+import apiKey from "../keys/keys";
 import CardGroup from "react-bootstrap/CardGroup";
 import WeatherForecast from "./WeatherForecast";
 
