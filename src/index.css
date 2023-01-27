@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('../public/background.jpg');
+
+
 }
 
 code {
@@ -21,7 +23,7 @@ code {
 
 .mx-auto{
   max-width: 75vw;
-  margin:1.5rem;
+  margin:2.5rem;
   
 }
 
@@ -43,4 +45,46 @@ code {
   margin:1.5rem;
   text-align: center;
   justify-content: center;
+
+}
+
+.li-temp {
+  list-style-image: url('../public/li-temp.svg');
+}
+
+.li-chance-of-rain {
+  list-style-image: url('../public/li-chance-of-rain.svg');
+}
+
+.li-cold-temp {
+  list-style-image: url('../public/li-cold-temp.svg');
+}
+
+.li-hot-temp {
+  list-style-image: url('../public/li-hot-temp.svg');
+}
+
+.li-night {
+  list-style-image: url('../public/33_Clear.svg');
+}
+
+.li-rain-type-intensity {
+  list-style-image: url('../public/li-rain-type-intensity.svg');
+}
+
+.li-day{
+  list-style-image: url('../public/li-day.svg');
+}
+.footer {
+  background-color: #b7afac;
+  bottom: 0;
+  position:fixed;
+  width: 100vw;
+  text-align: center;
+  opacity: 25%;
+  z-index: -1;
+  
+}
+.icons {
+  margin: 5px 10px;
 }
