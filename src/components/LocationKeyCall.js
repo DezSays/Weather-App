@@ -56,6 +56,7 @@ const LocationKeyCall = () => {
         <Form.Control
           aria-label="Example text with button addon"
           aria-describedby="basic-addon1"
+          placeholder="Enter zip code here"
         />
       </InputGroup>
       <CardGroup hidden={disabled} className="mx-auto">
