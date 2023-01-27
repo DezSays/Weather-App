@@ -68,7 +68,7 @@ const WeatherForecast = ({ locationKey }) => {
 
   const fetchFiveDayForecast = async () => {
     const getFiveDayForecastData = await fetch(
-      `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}`
+      `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}`
     );
     const fiveDayForecastJSON = await getFiveDayForecastData.json();
 
@@ -707,7 +707,7 @@ const WeatherForecast = ({ locationKey }) => {
 
   const currentWeatherFetch = async () => {
     const getCurrentWeatherData = await fetch(
-      `http://dataservice.accuweather.com/forecasts/v1/hourly/1hour/${locationKey}?apikey=${apiKey}`
+      `https://dataservice.accuweather.com/forecasts/v1/hourly/1hour/${locationKey}?apikey=${apiKey}`
     );
     const currentWeatherJSON = await getCurrentWeatherData.json();
 
@@ -818,7 +818,7 @@ const WeatherForecast = ({ locationKey }) => {
     setCurrentImg(weatherIconNumber);
 
     const getForecastDescriptionData = await fetch(
-      `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}`
+      `https://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${apiKey}`
     );
     const forecastDescriptionJSON = await getForecastDescriptionData.json();
     const weatherNow = forecastDescriptionJSON.Headline.Text;

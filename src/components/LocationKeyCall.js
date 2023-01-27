@@ -13,7 +13,7 @@ const LocationKeyCall = () => {
 
   const fetchWeatherLocation = async () => {
     const getWeatherData = await fetch(
-      `http://dataservice.accuweather.com/locations/v1/postalcodes/search?apikey=${apiKey}&q=${zip}&details=true`
+      `https://dataservice.accuweather.com/locations/v1/postalcodes/search?apikey=${apiKey}&q=${zip}&details=true`
     );
     const weatherJSON = await getWeatherData.json();
     const weatherLocationKey = weatherJSON[0].Key;
