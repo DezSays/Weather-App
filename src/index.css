@@ -36,7 +36,7 @@ code {
 }
 
 #card-img{
-  max-height:40vh;
+  height:40vh;
 }
 
 
@@ -77,15 +77,46 @@ code {
   list-style-image: url('../public/li-day.svg');
 }
 .footer {
-  background-color: #b7afac;
+  
   bottom: 0;
   position:fixed;
-  width: 100vw;
+  width: 100%;
   text-align: center;
-  opacity: 25%;
+  justify-content: center;
+  background-color: rgba(0,0,0,.5);
+  
   z-index: -1;
   
 }
 .icons {
   margin: 5px 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
+
+.text-white{
+  text-align: center;
+  width: 80vw;
+  margin-left:10%;
+  font-size: larger;
+}
+
+#dezsays-weather-app-card-title{
+  font-size: 250%;
+  padding-bottom: 1%;
+  border-bottom: dotted
+}
+
+#dezsays-weather-app-card-text{
+  font-size: 150%;
+  line-height: 200%;
+  
+}
+
+#weather-description-home{
+  background-color: rgba(0,0,0,.5);
+  padding:5% 0% 5% 0%;
+  
+}
+
