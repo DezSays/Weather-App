@@ -1,92 +1,84 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('../public/background.jpg');
-
-
+  background-image: url("../public/background.jpg");
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-#search-bar{
-  width:50%;
-  padding:2% 0%;
+#search-bar {
+  width: 50%;
+  padding: 2% 0%;
   opacity: 80%;
 }
 
-.mx-auto{
+.mx-auto {
   max-width: 75vw;
-  margin:2.5rem;
-  
+  margin: 2.5rem;
 }
 
-.weather-card{
-  margin:1.5rem;
-  margin-top:auto;
+.weather-card {
+  margin: 1.5rem;
+  margin-top: auto;
   opacity: 80%;
   text-align: center;
   justify-content: center;
 }
 
-#card-img{
-  height:40vh;
+#card-img {
+  height: 40vh;
 }
 
-
-
-.five-day-weather-card{
+.five-day-weather-card {
   opacity: 80%;
-  margin:1.5rem;
+  margin: 1.5rem;
   text-align: center;
   justify-content: center;
-
 }
 
 .li-temp {
-  list-style-image: url('../public/li-temp.svg');
+  list-style-image: url("../public/li-temp.svg");
 }
 
 .li-chance-of-rain {
-  list-style-image: url('../public/li-chance-of-rain.svg');
+  list-style-image: url("../public/li-chance-of-rain.svg");
 }
 
 .li-cold-temp {
-  list-style-image: url('../public/li-cold-temp.svg');
+  list-style-image: url("../public/li-cold-temp.svg");
 }
 
 .li-hot-temp {
-  list-style-image: url('../public/li-hot-temp.svg');
+  list-style-image: url("../public/li-hot-temp.svg");
 }
 
 .li-night {
-  list-style-image: url('../public/33_Clear.svg');
+  list-style-image: url("../public/33_Clear.svg");
 }
 
 .li-rain-type-intensity {
-  list-style-image: url('../public/li-rain-type-intensity.svg');
+  list-style-image: url("../public/li-rain-type-intensity.svg");
 }
 
-.li-day{
-  list-style-image: url('../public/li-day.svg');
+.li-day {
+  list-style-image: url("../public/li-day.svg");
 }
 .footer {
-  
   bottom: 0;
-  position:fixed;
+  position: fixed;
   width: 100%;
   text-align: center;
   justify-content: center;
-  background-color: rgba(0,0,0,.5);
-  
+  background-color: rgba(0, 0, 0, 0.5);
+
   z-index: -1;
-  
 }
 .icons {
   margin: 5px 10px;
@@ -95,28 +87,25 @@ code {
   align-items: center;
 }
 
-.text-white{
+.text-white {
   text-align: center;
   width: 80vw;
-  margin-left:10%;
+  margin-left: 10%;
   font-size: larger;
 }
 
-#dezsays-weather-app-card-title{
+#dezsays-weather-app-card-title {
   font-size: 250%;
   padding-bottom: 1%;
-  border-bottom: dotted
+  border-bottom: dotted;
 }
 
-#dezsays-weather-app-card-text{
+#dezsays-weather-app-card-text {
   font-size: 150%;
   line-height: 200%;
-  
 }
 
-#weather-description-home{
-  background-color: rgba(0,0,0,.5);
-  padding:5% 0% 5% 0%;
-  
+#weather-description-home {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5% 0% 5% 0%;
 }
-

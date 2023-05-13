@@ -11,7 +11,7 @@ const LocationKeyCall = () => {
   const [zip, setZip] = useState("");
   const [locationKey, setLocationKey] = useState("");
   const [disabled, setDisabled] = useState(true);
-  const [hiddenHome, setHiddenHome] = useState(false)
+  const [hiddenHome, setHiddenHome] = useState(false);
 
   const fetchWeatherLocation = async () => {
     const getWeatherData = await fetch(
@@ -35,7 +35,7 @@ const LocationKeyCall = () => {
   const handleClick = () => {
     fetchWeatherLocation();
     setDisabled(false);
-    setHiddenHome(true)
+    setHiddenHome(true);
   };
 
   return (
@@ -65,16 +65,21 @@ const LocationKeyCall = () => {
       <CardGroup hidden={disabled} className="mx-auto">
         <WeatherForecast locationKey={locationKey} />
       </CardGroup>
-      
+
       <CardGroup id="weather-description-home" hidden={hiddenHome}>
-          <Card.Title id="dezsays-weather-app-card-title" className="text-white">DezSays Weather App</Card.Title>
-          <Card.Text id="dezsays-weather-app-card-text" className="text-white">
-            <b>
-            Welcome to DezSays Weather App! Enter your zip code in the search bar above, and search for the weather forecast in your area. You may select either the current weather forecast or the five day forecast for the given zip code. This application is available thanks to the free Accuweather API. 
-            </b>
-          </Card.Text>
+        <Card.Title id="dezsays-weather-app-card-title" className="text-white">
+          DezSays Weather App
+        </Card.Title>
+        <Card.Text id="dezsays-weather-app-card-text" className="text-white">
+          <b>
+            Welcome to DezSays Weather App! Enter your zip code in the search
+            bar above, and search for the weather forecast in your area. You may
+            select either the current weather forecast or the five day forecast
+            for the given zip code. This application is available thanks to the
+            free Accuweather API.
+          </b>
+        </Card.Text>
       </CardGroup>
-        
     </>
   );
 };

@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 const WeatherForecast = ({ locationKey }) => {
-  const apiKey = process.env.REACT_APP_APIKEY
+  const apiKey = process.env.REACT_APP_APIKEY;
   const [displayState, setDisplayState] = useState(0);
   const [chanceOfRain, setChanceOfRain] = useState(Number);
   // eslint-disable-next-line
@@ -872,9 +872,15 @@ const WeatherForecast = ({ locationKey }) => {
               <Card.Text>{currentWeatherDescription}</Card.Text>
               <Card.Text>
                 <li className="li-temp">Temperature: {temperature}</li>
-                <li className="li-chance-of-rain">Chance of Rain: {chanceOfRain}</li>
-                <li className="li-rain-type-intensity" hidden={isHidden}>Rain Type: {rainType}</li>
-                <li className="li-rain-type-intensity" hidden={isHidden}>Rain Intensity: {rainIntensity}</li>
+                <li className="li-chance-of-rain">
+                  Chance of Rain: {chanceOfRain}
+                </li>
+                <li className="li-rain-type-intensity" hidden={isHidden}>
+                  Rain Type: {rainType}
+                </li>
+                <li className="li-rain-type-intensity" hidden={isHidden}>
+                  Rain Intensity: {rainIntensity}
+                </li>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -892,9 +898,15 @@ const WeatherForecast = ({ locationKey }) => {
             <Card.Body>
               <Card.Title>{dayOneDate}</Card.Title>
               <Card.Text>
-                <li className="li-cold-temp">Minimum Temperature: {dayOneMinTemp}</li>
-                <li className="li-hot-temp">Maximum Temperature: {dayOneMaxTemp}</li>
-                <li className="li-day">During the Day: {dayOneDayDescription}</li>
+                <li className="li-cold-temp">
+                  Minimum Temperature: {dayOneMinTemp}
+                </li>
+                <li className="li-hot-temp">
+                  Maximum Temperature: {dayOneMaxTemp}
+                </li>
+                <li className="li-day">
+                  During the Day: {dayOneDayDescription}
+                </li>
                 <li className="li-night">At Night: {dayOneNightDescription}</li>
               </Card.Text>
             </Card.Body>
@@ -905,9 +917,15 @@ const WeatherForecast = ({ locationKey }) => {
             <Card.Body>
               <Card.Title>{dayTwoDate}</Card.Title>
               <Card.Text>
-                <li className="li-cold-temp">Minimum Temperature: {dayTwoMinTemp}</li>
-                <li className="li-hot-temp">Maximum Temperature: {dayTwoMaxTemp}</li>
-                <li className="li-day">During the Day: {dayTwoDayDescription}</li>
+                <li className="li-cold-temp">
+                  Minimum Temperature: {dayTwoMinTemp}
+                </li>
+                <li className="li-hot-temp">
+                  Maximum Temperature: {dayTwoMaxTemp}
+                </li>
+                <li className="li-day">
+                  During the Day: {dayTwoDayDescription}
+                </li>
                 <li className="li-night">At Night: {dayTwoNightDescription}</li>
               </Card.Text>
             </Card.Body>
@@ -918,10 +936,18 @@ const WeatherForecast = ({ locationKey }) => {
             <Card.Body>
               <Card.Title>{dayThreeDate}</Card.Title>
               <Card.Text>
-                <li className="li-cold-temp">Minimum Temperature: {dayThreeMinTemp}</li>
-                <li className="li-hot-temp">Maximum Temperature: {dayThreeMaxTemp}</li>
-                <li className="li-day">During the Day: {dayThreeDayDescription}</li>
-                <li className="li-night">At Night: {dayThreeNightDescription}</li>
+                <li className="li-cold-temp">
+                  Minimum Temperature: {dayThreeMinTemp}
+                </li>
+                <li className="li-hot-temp">
+                  Maximum Temperature: {dayThreeMaxTemp}
+                </li>
+                <li className="li-day">
+                  During the Day: {dayThreeDayDescription}
+                </li>
+                <li className="li-night">
+                  At Night: {dayThreeNightDescription}
+                </li>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -931,10 +957,18 @@ const WeatherForecast = ({ locationKey }) => {
             <Card.Body>
               <Card.Title>{dayFourDate}</Card.Title>
               <Card.Text>
-                <li className="li-cold-temp">Minimum Temperature: {dayFourMinTemp}</li>
-                <li className="li-hot-temp">Maximum Temperature: {dayFourMaxTemp}</li>
-                <li className="li-day">During the Day: {dayFourDayDescription}</li>
-                <li className="li-night">At Night: {dayFourNightDescription}</li>
+                <li className="li-cold-temp">
+                  Minimum Temperature: {dayFourMinTemp}
+                </li>
+                <li className="li-hot-temp">
+                  Maximum Temperature: {dayFourMaxTemp}
+                </li>
+                <li className="li-day">
+                  During the Day: {dayFourDayDescription}
+                </li>
+                <li className="li-night">
+                  At Night: {dayFourNightDescription}
+                </li>
               </Card.Text>
             </Card.Body>
           </Card>
@@ -944,10 +978,18 @@ const WeatherForecast = ({ locationKey }) => {
             <Card.Body>
               <Card.Title>{dayFiveDate}</Card.Title>
               <Card.Text>
-                <li className="li-cold-temp">Minimum Temperature: {dayFiveMinTemp}</li>
-                <li className="li-hot-temp">Maximum Temperature: {dayFiveMaxTemp}</li>
-                <li className="li-day">During the Day: {dayFiveDayDescription}</li>
-                <li className="li-night">At Night: {dayFiveNightDescription}</li>
+                <li className="li-cold-temp">
+                  Minimum Temperature: {dayFiveMinTemp}
+                </li>
+                <li className="li-hot-temp">
+                  Maximum Temperature: {dayFiveMaxTemp}
+                </li>
+                <li className="li-day">
+                  During the Day: {dayFiveDayDescription}
+                </li>
+                <li className="li-night">
+                  At Night: {dayFiveNightDescription}
+                </li>
               </Card.Text>
             </Card.Body>
           </Card>
